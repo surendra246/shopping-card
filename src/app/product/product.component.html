@@ -1,7 +1,7 @@
 <div href="#" class="card card-product-grid">
     <a href="#" class="img-wrap"> <img src={{product.imageURL}}> </a>
     <figcaption class="info-wrap">
-        <a href="#" class="title">{{product.product_name}}</a>
+        <a [routerLink]="['/product-detail',product.product_id]" class="title">{{product.product_name}}</a>
         <div class="price mt-1">${{product.price}}</div>
     </figcaption>
 </div>

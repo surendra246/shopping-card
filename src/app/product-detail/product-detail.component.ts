@@ -20,7 +20,7 @@ export class ProductDetailComponent implements OnInit {
   }
 
   getProduct(id:any){
-    this.appService.getProductByID(this.id).subscribe(product=>this.product=product);
+    this.appService.getProductByID(this.id).subscribe(product[0]=>this.product=product[0]);
   }
 
   addToCart(){
