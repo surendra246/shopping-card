@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AppService } from './../app.service';
 
@@ -7,7 +7,7 @@ import { AppService } from './../app.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit,OnDestroy {
 
   searchKey: any;
   title = 'shopping-card';
@@ -19,6 +19,8 @@ export class HomeComponent implements OnInit {
       
       if (message) {
         this.filterCategories(message);
+      }else{
+        this.showCategories();
       }
     });
 
@@ -43,14 +45,18 @@ export class HomeComponent implements OnInit {
     const _categories = this.allCategories;
     this.categories = [];
 
-    console.log("searchString :: ", searchString, searchString.length )
+    console.log("searchString :: ", searchString, (searchString.length) )
     if(searchString.length < 0 ){
       return this.showCategories();
     }
     _categories.forEach((cat: any) => {
-      if (cat.name.indexOf(searchString) > -1) {
+      if (cat.search_key.indexOf(searchString) > -1 || cat.name.indexOf(searchString) > -1) {
         this.categories.push(cat);
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }
