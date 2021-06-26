@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { AppService } from './app.service';
 @Component({
   selector: 'app-root',
@@ -6,20 +7,13 @@ import { AppService } from './app.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
   title = 'shopping-card';
-  categories:any;
-  constructor(private appService: AppService) { }
+  constructor(private appService: AppService) {
+  
+  }
 
   ngOnInit() {
-    this.showCategories();
   }
 
-  showCategories() {
-    this.appService.getCategories()
-      .subscribe((data: any) => {
-        console.log("data ::",data)
-        this.categories = data;
-      });
-  }
+  
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from './../app.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  serachText:any='';
+  constructor(private appService: AppService) { }
 
   ngOnInit(): void {
+  }
+
+  sendMessage(): void {
+    // send message to subscribers via observable subject
+    this.appService.sendSearchText(this.serachText);
+  }
+
+  clearMessages(): void {
+    // clear messages
+    this.appService.clearMessages();
   }
 
 }
