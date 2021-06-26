@@ -1,0 +1,35 @@
+{
+  "categories": [
+    { "category_id": 1, "name": "Best clothes","imageUrl":"", "parent": "0" },
+    { "category_id": 2, "name": "Home interior", "imageUrl":"","parent": "0" },
+    { "category_id": 3, "name": "Electronics", "imageUrl":"","parent": "0" },
+    { "category_id": 4, "name": "Technologies", "imageUrl":"","parent": "0" },
+    { "category_id": 5, "name": "Digital goods", "imageUrl":"","parent": "0" }
+  ],
+  "products": [
+    { "product_id": 1, "category_id":1 ,"product_name": "Nike T-Shirt", "description":"Best Quality Cloth 100% Cotton" ,"price": "25.00", "imageURL":"", "quantity":100 },
+    { "product_id": 2, "category_id":1 ,"product_name": "Duke T-Shirt", "description":"Best Quality Cloth 100% Cotton" ,"price": "75.00", "imageURL":"", "quantity":100 },
+    { "product_id": 3, "category_id":1 ,"product_name": "Puma T-Shirt", "description":"Best Quality Cloth 100% Cotton" ,"price": "45.00", "imageURL":"", "quantity":100 },
+    { "product_id": 4, "category_id":2 ,"product_name": "Kicthen Items", "description":"Best Quality home appliances" ,"price": "125.00", "imageURL":"", "quantity":100 },
+    { "product_id": 5, "category_id":3 ,"product_name": "Wipro Bulb", "description":"Best Quality product" ,"price": "225.00", "imageURL":"", "quantity":100 },
+    { "product_id": 6, "category_id":3 ,"product_name": "Philips Bulb", "description":"Best Quality product" ,"price": "525.00", "imageURL":"", "quantity":100 },
+    { "product_id": 7, "category_id":3 ,"product_name": "Murphy Bulb", "description":"Best Quality product" ,"price": "588.00", "imageURL":"", "quantity":100 },
+    { "product_id": 8, "category_id":4 ,"product_name": "Java Programming Course", "description":"Good Teachers available" ,"price": "235.00", "imageURL":"", "quantity":100 },
+    { "product_id": 9, "category_id":5 ,"product_name": "Angular Course", "description":"Best training center" ,"price": "205.00", "imageURL":"", "quantity":100 },
+    { "product_id": 10, "category_id":5 ,"product_name": "iPhone 10x", "description":"Best Product" ,"price": "725.00", "imageURL":"", "quantity":100 }
+
+  ],
+  "cart_items": [
+      { "product_id": 4,"quantity":2},
+      { "product_id": 2,"quantity":10},
+      { "product_id": 9,"quantity":1},
+      { "product_id": 8,"quantity":1},
+      { "product_id": 10,"quantity":3}
+  ],
+  "payment_method": [
+      { "id": 1,"name":"Paypal"},
+      { "id": 2,"name":"UPI"},
+      { "id": 3,"name":"NetBanking"},
+      { "id": 4,"name":"Wallet"}
+  ]
+}
