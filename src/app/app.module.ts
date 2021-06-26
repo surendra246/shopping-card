@@ -8,13 +8,17 @@ import { FooterComponent } from './footer/footer.component';
 import { CategoryComponent } from './category/category.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { PaymentComponent } from './payment/payment.component';
+import { CartComponent } from './cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     CategoryComponent,
-    HomeComponent
+    HomeComponent,
+    PaymentComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
