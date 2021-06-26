@@ -15,7 +15,9 @@ export class AppService {
     return this.http.get<any>(this.configUrl + 'categories');
   }
 
-
+  getProducts() {
+    return this.http.get<any>(this.configUrl + 'products');
+  }
   sendSearchText(message: string) {
     this.subject.next({ text: message });
   }

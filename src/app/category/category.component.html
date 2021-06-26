@@ -1,7 +1,7 @@
 <div href="#" class="card card-product-grid">
     <a href="#" class="img-wrap"> <img src={{category.imageUrl}}> </a>
     <figcaption class="info-wrap">
-        <a href="#" class="title">{{category.name}}</a>
+        <a [routerLink]= "['/products',category.category_id]" class="title">{{category.name}} {{ category.category_id}}</a>
         <!-- <div class="price mt-1">$179.00</div> price-wrap.// -->
     </figcaption>
 </div>

@@ -17,9 +17,11 @@ export class HomeComponent implements OnInit {
     this.subscription = this.appService.onSearch().subscribe(message => {
       const _categories = this.categories;
       if (message) {
-        _categories.filter((cat: any) => {
-          return (cat.name.indexOf(message) > -1);
-        })
+        _categories.forEach((cat:any) => {
+          if(cat.name.indexOf(message) > -1){
+            _categories.push(cat);
+          }
+        });
         console.log( _categories)
       }
     });
