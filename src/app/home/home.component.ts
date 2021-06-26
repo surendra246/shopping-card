@@ -12,17 +12,13 @@ export class HomeComponent implements OnInit {
   searchKey: any;
   title = 'shopping-card';
   categories: any;
+  allCategories: any;
   subscription: Subscription;
   constructor(private appService: AppService) {
     this.subscription = this.appService.onSearch().subscribe(message => {
-      const _categories = this.categories;
+      
       if (message) {
-        _categories.forEach((cat:any) => {
-          if(cat.name.indexOf(message) > -1){
-            _categories.push(cat);
-          }
-        });
-        console.log( _categories)
+        this.filterCategories(message);
       }
     });
 
@@ -38,6 +34,23 @@ export class HomeComponent implements OnInit {
       .subscribe((data: any) => {
         console.log("data ::", data)
         this.categories = data;
+        this.allCategories = data;
       });
+  }
+
+  filterCategories(searchString:string): void {
+    //this.showCategories();
+    const _categories = this.allCategories;
+    this.categories = [];
+
+    console.log("searchString :: ", searchString, searchString.length )
+    if(searchString.length < 0 ){
+      return this.showCategories();
+    }
+    _categories.forEach((cat: any) => {
+      if (cat.name.indexOf(searchString) > -1) {
+        this.categories.push(cat);
+      }
+    });
   }
 }

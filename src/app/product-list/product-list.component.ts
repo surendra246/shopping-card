@@ -24,8 +24,13 @@ export class ProductListComponent implements OnInit {
   getProducts(catId: any) {
     this.appService.getProducts()
       .subscribe((data: any) => {
-        console.log("data ::", data)
-        this.products = data;
+        data.forEach((_product:any) => {
+          if (_product.category_id == catId) {
+            this.products.push(_product);
+          }
+
+        });
+
       });
   }
 

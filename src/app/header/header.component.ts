@@ -7,7 +7,7 @@ import { AppService } from './../app.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  serachText:any='';
+  serachText: string = '';
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
