@@ -2,17 +2,17 @@
 <div class="container">
   <div class="card text-center">
     <div class="card-header">
-      {{product.category}}
+      
     </div>
     <div class="card-body">
       <div class="row">
         <div class="col-md-6">
-          <img class="card-img-top" src="../../assets/House1.jpg" alt="Card image cap">
+          <img class="card-img-top" src="{{product.imageURL}}" alt="Card image cap">
         </div>
         <div class="col-md-6">
           <div class="row" style="margin-top: 10px;">
             <div class="col-md-3" style="font-weight: 600;margin-left: -25px;">Name:</div>
-            <div class="col-md-9" >{{product.name}}</div>
+            <div class="col-md-9" >{{product.product_name}}</div>
           </div>
           <div class="row" style="margin-top: 5px;">
             <div class="col-md-3" style="font-weight: 600;margin-left: -5px; ">Description:</div>

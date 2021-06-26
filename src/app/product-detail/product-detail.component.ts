@@ -9,26 +9,35 @@ import { AppService } from '../app.service';
 })
 export class ProductDetailComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute,private appService:AppService) { }
+  constructor(private route: ActivatedRoute, private appService: AppService) { }
 
-  id:any;
-  product:any;
+  id: any;
+  product: any;
 
   ngOnInit() {
-    this.route.params.subscribe(p=>this.id=p['id']);
-    this.getProduct(this.id);
-  }
-
-  getProduct(id:any){
-    this.appService.getProductByID(this.id).subscribe(product[0]=>this.product=product[0]);
-  }
-
-  addToCart(){
+    this.route.params.subscribe(p => {
+      this.id = p['id']
+      this.getProduct(this.id);
+    });
 
   }
 
-  cancelClick(){
+  getProduct(id: any) {
+    this.appService.getProducts().subscribe(products => {
+      products.forEach((_product: any) => {
+        if (_product.product_id == id) {
+          this.product = _product
+        }
+      });
+    });
+  }
+
+  addToCart() {
 
   }
-  
+
+  cancelClick() {
+
+  }
+
 }

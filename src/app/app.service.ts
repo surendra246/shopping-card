@@ -25,7 +25,7 @@ export class AppService {
   }
 
   getProductByID(id:any){
-    return this.http.get<any[]>(this.configUrl+'products/').pipe(filter(d => d.product_id === id));
+   // return this.http.get<any[]>(this.configUrl+'products/').pipe(filter(d => d.product_id === id));
   }
 
 
