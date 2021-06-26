@@ -1,7 +1,9 @@
-<div href="#" class="card card-product-grid">
-    <a href="#" class="img-wrap"> <img src={{category.imageUrl}}> </a>
+<div [routerLink]="['/products',category.category_id]" class="card card-product-grid">
+    <a [routerLink]="['/products',category.category_id]" class="img-wrap"> <img src={{category.imageUrl}}> </a>
     <figcaption class="info-wrap">
-        <a [routerLink]= "['/products',category.category_id]" class="title">{{category.name}} {{ category.category_id}}</a>
+        <a [routerLink]="['/products',category.category_id]" class="title">
+            {{category.name}} {{ category.category_id}}
+        </a>
         <!-- <div class="price mt-1">$179.00</div> price-wrap.// -->
     </figcaption>
 </div>

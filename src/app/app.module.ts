@@ -12,6 +12,8 @@ import { PaymentComponent } from './payment/payment.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product/product.component';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,9 +28,11 @@ import { ProductComponent } from './product/product.component';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
