@@ -18,6 +18,15 @@ export class AppService {
   getProducts() {
     return this.http.get<any>(this.configUrl + 'products');
   }
+  getAllProducts(catid:any){
+    return this.http.get<any>(this.configUrl+'products/'+catid);
+  }
+
+  getProductByID(id:any){
+    return this.http.get<any>(this.configUrl+'products/'+id);
+  }
+
+
   sendSearchText(message: string) {
     this.subject.next(message);
   }
